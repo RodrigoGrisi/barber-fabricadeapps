@@ -19,7 +19,7 @@ model User {
   email              String
   endereco           String?
   password           String
-  stripe_customer_id String
+  stripe_customer_id String?
 
   created_at    DateTime?     @default(now())
   updated_at    DateTime?     @default(now())
