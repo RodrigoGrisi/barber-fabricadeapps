@@ -4,6 +4,7 @@ import { CreateUserService } from "../../services/user/CreateUserService";
 
 class CreateUserController {
   async handle(request: Request, response: Response) {
+    
     // aqui solicita as inforamçãoes do cliente via body.
     const { name, email, password } = request.body;
 
