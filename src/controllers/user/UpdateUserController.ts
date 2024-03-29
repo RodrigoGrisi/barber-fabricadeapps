@@ -1,11 +1,9 @@
-import { Request, Response, NextFunction } from "express";
+import {Request, Response} from 'express'
+import { UpdateUserService } from '../../services/user/UpdateUserService'
 
-import { UpdateUserService } from "../../services/user/UpdateUserService";
-
-class UpdateUserController {
-  async handle(request: Request, response: Response) {
+class UpdateUserController{
+  async handle(request: Request, response: Response){
     const { name, endereco } = request.body;
-
     const user_id = request.user_id;
 
     const updateUser = new UpdateUserService();
@@ -13,12 +11,12 @@ class UpdateUserController {
     const user = await updateUser.execute({
       user_id,
       name,
-      endereco,
-    });
+      endereco
+    })
 
-    return response.json(user)
+    return response.json(user);
 
   }
 }
 
-export { UpdateUserController };
+export { UpdateUserController }

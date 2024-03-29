@@ -1,9 +1,8 @@
-import { Request, Response } from "express";
+import {Request, Response} from 'express'
+import { CreateHaircutService } from '../../services/haircut/CreateHaircutService'
 
-import { CreateHaircutService } from "../../services/haircut/CreateHaircutService";
-
-class CreateHaircutController {
-  async handle(request: Request, response: Response) {
+class CreateHaircutController{
+  async handle(request: Request, response: Response){
     const { name, price } = request.body;
     const user_id = request.user_id;
 
@@ -13,10 +12,11 @@ class CreateHaircutController {
       user_id,
       name,
       price,
-    });
+    })
 
-    return response.json(haircut);
+    return response.json(haircut)
+
   }
 }
 
-export { CreateHaircutController };
+export { CreateHaircutController }
